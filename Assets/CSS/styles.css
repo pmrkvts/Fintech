@@ -1,0 +1,151 @@
+/* Custom styles */
+body {
+    background-color: #f4f7fa;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-custom {
+    background-color: #007bff;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background: url('/Assets/Images/Foto De Perfil.png') no-repeat center center;
+    background-size: cover;
+    margin-right: auto;
+    transition: opacity 0.3s ease; 
+}
+
+.profile-pic:hover {
+    opacity: 0.8; 
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('/Assets/Images/logo.png') no-repeat center center;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+}
+
+.nav-logo:hover {
+    animation: fadeIn 0.5s ease-in-out forwards, scaleLogo 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleLogo {
+    0% { transform: translateX(-50%) scale(1); }
+    100% { transform: translateX(-50%) scale(1.1); }
+}
+
+.lista {
+    margin-left: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s; 
+}
+
+.nav-list a:hover {
+    color: #535353; 
+}
+
+.btn-custom {
+    border-radius: 40px;
+    background: linear-gradient(94deg, #4960F9 13.45%, #1433FF 93.37%);
+    color: white;
+    transition: transform 0.3s ease; 
+}
+
+.btn-custom:hover {
+    transform: scale(1.05); 
+}
+
+.balance-info {
+    color: #333;
+}
+
+.card-custom {
+    background-color: #ffffff;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease; 
+}
+
+.icon:hover {
+    transform: translateY(-5px); 
+}
+
+.chart-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #007bff;
+        padding-top: 10px;
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .profile-pic,
+    .nav-logo {
+        width: 60px; 
+        height: 60px;
+    }
+}
